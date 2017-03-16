@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>exercicio aula</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+      <div class="container">  
+        <form action="index.php" method="POST">
+            Nome: <input type=text name=nome><br>
+            Email: <input type=text name=email><br>
+            Comentario:<br><textarea name=comentario cols=40 rows=5></textarea><br>
+            Livros:<br>
+            <input type=radio name=livros value="PHP1"> PHP1
+            <input type=radio name=livros value="PHP2"> PHP2
+            <input type=radio name=livros value="PHP3"> PHP3
+            <input type=radio name=livros value="PHP4"> PHP4
+            <br><B>Escolha a linguagem de programação:</B><br>
+			<input type=checkbox name="numeros[]" value=C> C<br>
+			<input type=checkbox name="numeros[]" value=Java> Java<br>
+			<input type=checkbox name="numeros[]" value=Python> Python<br>
+			<input type=hidden name=escondido value="valor do escondido">
+			
+            
+            
+            
+         
+
+        
+			Quantos filhos você tem? <input type=text name=qtfilhos><br>
+        <br><input type=submit value="OK">  
+        </form>
+      </div>
+        
+    </body>
+</html>
