@@ -30,7 +30,7 @@
 
 
 
-                $query = "SELECT cliente.cod AS codcliente ,cliente.nome AS nomec , cpf, codc,cidades.nome FROM public.cliente inner join cidades on(cliente.codc=cidades.cod);";
+                $query = "SELECT responsavel.cod AS codr ,responsavel.nome AS nomer , codc,cidades.nome FROM public.responsavel inner join cidades on(responsavel.codc=cidades.cod);";
 
 
                 $result = pg_query($conn, $query);
@@ -41,25 +41,25 @@
                 if ($result) {
 
                     echo "<table border='1px'>";
-                    echo '<tr><td>Nome:</td>' . '<td>CPF</td>' . '<td>Cidade</td>'  . '<td>Alterar</td>' . '<td>Excluir</td></tr>';
+                    echo '<tr><td>Nome:</td>' . '<td>Cidade</td>'  . '<td>Alterar</td>' . '<td>Excluir</td></tr>';
 
                     while ($row = pg_fetch_assoc($result)) {
 
 
 
 
-                        echo '<tr><td> ' . $row['nomec'] . ' </td> <td> ' . $row['cpf'] . ' </td> <td> ' . $row['nome'] . '</td>  ' .
+                        echo '<tr><td> ' . $row['nomer'] . ' </td>  <td> ' . $row['nome'] . '</td>  ' .
                         '<td>' .
-                        '<form method="POST" action="./alterar-cliente.php">';
+                        '<form method="POST" action="./alterar-responsavel.php">';
 
 
 
                         echo '<input type="submit" name="altera" value="alterar"> ';
-                        echo '<input type="hidden" name="cod" value="' . $row['codcliente'] . '">' .
+                        echo '<input type="hidden" name="cod" value="' . $row['codr'] . '">' .
                         '</form></td><td>' .
-                        '<form method="POST" action="./excluir-cliente.php">' .
+                        '<form method="POST" action="./excluir-responsavel.php">' .
                         '<input type="submit" name="exclui" value="excluir">
-<input type="hidden" name="cod" value="' . $row['codcliente'] . '">
+<input type="hidden" name="cod" value="' . $row['codr'] . '">
 </form></td></tr>';
                     }
                     echo '</table>';
@@ -74,10 +74,10 @@
 
 
                 <div class="login">
-                   <form method="POST" action="http://127.0.0.1/Trabalho-final/inserir-cliente.php">
+                   <form method="POST" action="http://127.0.0.1/Trabalho-final/inserir-responsavel.php">
 
                         Nome: <input type=text name="nome"><br/>
-                        CPF:<input type=text name="cpf"><br/>
+                        
                         
                         <select name="codc">
                 <?php

@@ -1,4 +1,4 @@
-<footer>Rodape</footer>
+<footer></footer>
 	</div>
 </body>
 </html>
