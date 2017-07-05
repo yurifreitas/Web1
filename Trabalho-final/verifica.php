@@ -1,7 +1,9 @@
 <?php
 
 session_start();
-
+ini_set('display_errors',1);
+ini_set('display_startup_erros',1);
+error_reporting(E_ALL);
 $log=$_POST['login'];
 $senha=$_POST['senha'];
 
@@ -10,7 +12,7 @@ $senha=$_POST['senha'];
 
 $conn=conecta();
         
-        $query="SELECT login, senha FROM public.login where login='".$log."' and senha='".$senha."';";
+        $query="SELECT id, senha FROM public.login where id='".$log."' and senha='".$senha."';";
 
 echo $query;
 
